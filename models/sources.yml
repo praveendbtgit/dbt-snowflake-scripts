@@ -1,0 +1,10 @@
+sources:
+  - name: oracle_src
+    database: INSURANCE_DB
+    schema: BRONZE
+    tables:
+      - name: RAW_AGENTS
+      - name: RAW_CLAIMS
+      - name: RAW_CUSTOMERS
+      - name: RAW_PAYMENTS
+      - name: RAW_POLICIES

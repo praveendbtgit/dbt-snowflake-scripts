@@ -29,7 +29,8 @@ SELECT TRIM(CUST_ID) AS CUSTOMER_ID,
          upper(COUNTRY) COUNTRY, 
          decode(IS_ACTIVE,1,'ACTIVE',0,'INACTIVE') STATUS,
          ROW_NUMBER() OVER (PARTITION BY CUSTOMER_ID,ORDER_ID,ORDER_DATE ORDER BY 1,2) K
-    FROM {{ source('oracle_erp', 'CUSTOMER_ORDERS_RAW_T') }}
+    FROM dual
+    
 )
 SELECT {{dbt_utils.generate_surrogate_key(['CUSTOMER_ID','ORDER_ID'])}} customer_sk, * 
       FROM PRAVEEN_DBT_TRAINER
