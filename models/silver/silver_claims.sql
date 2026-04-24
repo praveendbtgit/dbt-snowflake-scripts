@@ -1,0 +1,2 @@
+SELECT CLAIM_ID, POLICY_ID, CLAIM_AMOUNT
+FROM {{ source('oracle_src','RAW_CLAIMS') }}

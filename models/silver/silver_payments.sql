@@ -1,0 +1,2 @@
+SELECT PAYMENT_ID, POLICY_ID, PAYMENT_AMOUNT
+FROM {{ source('oracle_src','RAW_PAYMENTS') }}
